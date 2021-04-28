@@ -1,5 +1,6 @@
 pipeline {
-  agent { label "minimal" }
+  //agent { label "minimal" }
+  agent { label "master" }
   stages {
 
     // Note: Add build stage here
