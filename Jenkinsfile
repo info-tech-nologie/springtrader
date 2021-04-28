@@ -6,7 +6,8 @@ pipeline {
     // Note: Add build stage here
       stage('Build') {
   agent {
-    label "lead-toolchain-skaffold"
+    //label "lead-toolchain-skaffold"
+    label "master" 
   }
   steps {
     container('skaffold') {
@@ -20,7 +21,8 @@ pipeline {
     // Note: Add deploy stage here
     stage("Deploy to Staging") {
   agent {
-    label "lead-toolchain-skaffold"
+    //label "lead-toolchain-skaffold"
+    label "master" 
   }
   when {
       branch 'master'
@@ -58,7 +60,8 @@ pipeline {
     // Note: Add prod stage here
     stage("Deploy to Production") {
   agent {
-    label "lead-toolchain-skaffold"
+    //label "lead-toolchain-skaffold"
+    label "master"   
   }
   when {
       branch 'master'
